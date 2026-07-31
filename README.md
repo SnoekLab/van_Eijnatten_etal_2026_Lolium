@@ -1,6 +1,6 @@
 # van_Eijnatten_etal_2026_Lolium
 
-This repository contains the code used in the analysis of van Eijnatten et al., 2026 (add doi). For any questions regarding the code or data availability, please reach out to a.l.vaneijnatten@uu.nl.
+This repository contains the code used to generate the results of van Eijnatten et al., 2026 (add doi). For any questions regarding the code or data availability, please reach out to a.l.vaneijnatten@uu.nl.
 
 The SNP map used in this study was based on the VCF file from Fois et al., 2021 (https://doi.org/10.3390/genes13010020). The folder Make_SNP_map contains the scripts we used to process the VCF file. Process_vcf.py loads in the vcf file and filters the SNPs based on quality and allele frequency. Make_R_object.R loads the filtered VCF in R and saves it as an R object.
 
@@ -8,7 +8,7 @@ PCoA_for_GWAS_and_FigureS2.R performs PCoA analysis on each community (16S-endos
 
 The folder GWAS_scripts contains scripts performing the GWAS. There are separate scripts for the 16S and ITS traits and for the relative abundance, Shannon diversity, and PCoA traits.
 
-The folder QTLs_and_candidate genes contains the scripts to score QTLs and discover condidate genes. The genome assembly and gff used was made available by Bryce et al., 2015 (https://doi.org/10.1111/tpj.13037) and can be downloaded from https://ryegrassgenome.ghpc.au.dk/DOWNLOAD/. Get_peak_SNPs_16S.R and Get_peak_SNPs_ITS.R select all peak SNPs for each significant association. Then, Make_fastasa_and_blastx.R takes the sequences of all genes in a 0.2Mbp interval around each peak SNP and puts them in a fasta for use in BLAST. The command line code we used to download the ITAG4.0 Arabidopsis proteome and to find A.thaliana homologs using blastx is as follows:
+The folder QTLs_and_candidate genes contains the scripts to score QTLs and discover candidate genes. The genome assembly and gff file were made available by Bryce et al., 2015 (https://doi.org/10.1111/tpj.13037) and can be downloaded from https://ryegrassgenome.ghpc.au.dk/DOWNLOAD/. Get_peak_SNPs_16S.R and Get_peak_SNPs_ITS.R select all peak SNPs for each significant association. Then, Make_fastasa_and_blastx.R takes the sequences of all genes in a 0.2Mbp interval around each peak SNP and puts them in a fasta for use in BLAST. The command line code we used to download the ITAG4.0 Arabidopsis proteome and to find A.thaliana homologs using blastx is as follows:
 
 conda create -n blast-env blast python=3 <br />
 source activate blast-env <br />
